@@ -1,0 +1,18 @@
+version: '2'
+services:
+  db:
+    container_name: postgres
+    image: postgres:latest
+    ports:
+      - '5432:5432'
+    volumes:
+      - ./data/postgres:/data/postgres
+    env_file:
+      - docker.env
+
+  web:
+    image: bhargavgohil/assignment:1
+    depends_on:
+      - db
+    ports:
+      - '5000:5000'
