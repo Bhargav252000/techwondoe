@@ -32,6 +32,9 @@ class TeamsController implements Controller {
     }
   };
 
+  /**
+   * add a user to the team
+   */ 
   private addUserToTeam = async (request: customRequest, response: express.Response, next: express.NextFunction) => {
     try {
       const team = await this.teamsService.addUserToTeam(request);

@@ -24,7 +24,7 @@ class AuthenticationController implements Controller {
     try {
       const { cookie, user } = await this.authenticationService.register(userData);
       response.setHeader('Set-Cookie', [cookie]);
-      response.send(user);
+      response.send({ user, cookie });
     } catch (error) {
       next(error);
     }

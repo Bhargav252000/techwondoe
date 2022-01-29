@@ -15,7 +15,6 @@ validateEnv();
   let retries = 5;
   while (retries) {
     try {
-      console.log('Connecting to database...');
       await createConnection(config);
       console.log('Connected to the database');
       break;
